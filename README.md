@@ -9,3 +9,5 @@ passed, a default length of 16 is used.
 
 Passwords will contain an uppercase letter, a lowercase letter, and a
 digit.
+
+Provided under the Zero Clause BSD License (see the `LICENSE` file.)
