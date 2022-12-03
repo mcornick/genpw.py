@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Password generator using the secrets module."""
 import argparse
 import string
 import sys
