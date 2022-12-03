@@ -9,11 +9,24 @@ except ModuleNotFoundError:
     sys.stderr.write("This script requires Python 3.6 or newer\n")
     sys.exit(1)
 
+
+def length(value):
+    """Validate the length provided."""
+    if int(value) < 3:
+        raise ValueError("minimum length is 3")
+    else:
+        return int(value)
+
+
 parser = argparse.ArgumentParser(
     prog="genpw.py", description="a random password generator"
 )
 parser.add_argument(
-    "-l", "--length", default=16, type=int, help="length to generate (default: 16)"
+    "-l",
+    "--length",
+    default=16,
+    type=length,
+    help="length to generate (default: 16; must be >= 3)",
 )
 args = parser.parse_args()
 
