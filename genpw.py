@@ -7,6 +7,11 @@ try:
     length = int(sys.argv[1])
 except (IndexError, ValueError):
     length = 16
+
+if length < 3:
+    sys.stderr.write("Minimum length is 3\n")
+    sys.exit(1)
+
 alphabet = string.ascii_letters + string.digits
 while True:
     password = "".join(secrets.choice(alphabet) for i in range(length))
