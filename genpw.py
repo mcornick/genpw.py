@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
-import secrets
 import string
 import sys
+
+try:
+    import secrets
+except ModuleNotFoundError:
+    sys.stderr.write("This script requires Python 3.6 or newer\n")
+    sys.exit(1)
 
 try:
     length = int(sys.argv[1])
