@@ -40,17 +40,23 @@ if args.no_lower and args.no_upper and args.no_digit:
     sys.stderr.write(parser.prog + ": error: excluded all character types\n")
     sys.exit(1)
 
-if args.length < 3:
-    sys.stderr.write(parser.prog + ": error: minimum length is 3\n")
-    sys.exit(1)
-
 alphabet = ""
+minimum_length = 0
 if not args.no_lower:
     alphabet = alphabet + string.ascii_lowercase
+    minimum_length = minimum_length + 1
 if not args.no_upper:
     alphabet = alphabet + string.ascii_uppercase
+    minimum_length = minimum_length + 1
 if not args.no_digit:
     alphabet = alphabet + string.digits
+    minimum_length = minimum_length + 1
+
+if args.length < minimum_length:
+    sys.stderr.write(
+        parser.prog + ": error: minimum length is {}\n".format(minimum_length)
+    )
+    sys.exit(1)
 
 while True:
     password = "".join(secrets.choice(alphabet) for i in range(args.length))
