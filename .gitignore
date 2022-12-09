@@ -1,3 +1,5 @@
+.direnv
+.envrc
 .pre-commit-config.yaml
 __pycache__
 genpw.egg-info
