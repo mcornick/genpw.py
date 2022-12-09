@@ -13,10 +13,22 @@ except ModuleNotFoundError:
 
 
 @click.command()
-@click.option("--length", default=16, help="length to generate")
-@click.option("--upper/--no-upper", default=True, help="include uppercase letters")
-@click.option("--lower/--no-lower", default=True, help="include lowercase letters")
-@click.option("--digit/--no-digit", default=True, help="include digits")
+@click.option("--length", default=16, show_default=True, help="length to generate")
+@click.option(
+    "--upper/--no-upper",
+    default=True,
+    show_default=True,
+    help="include uppercase letters",
+)
+@click.option(
+    "--lower/--no-lower",
+    default=True,
+    show_default=True,
+    help="include lowercase letters",
+)
+@click.option(
+    "--digit/--no-digit", default=True, show_default=True, help="include digits"
+)
 def cli(length, upper, lower, digit):
     """Generate a random password."""
     if not lower and not upper and not digit:
