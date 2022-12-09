@@ -4,6 +4,10 @@ A password generator based on the Python 3.0 `secrets` module, and an
 extension of the examples provided in its
 [documentation](https://docs.python.org/3/library/secrets.html).
 
+Requires the [click](https://palletsprojects.com/p/click/) module.
+Expects to be installed with `pip`, such as
+`pip install git+https://github.com/mcornick/genpw.py.git`
+
 Use the --length option to specify the length. If no length is passed, a
 default length of 16 is used.
 
