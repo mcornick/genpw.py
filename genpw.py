@@ -29,22 +29,6 @@ def genpw(length=16, upper=True, lower=True, digit=True):
             and (any(c.isupper() for c in password) or not upper)
             and (any(c.isdigit() for c in password) or not digit)
         ):
-            break
-    alphabet = ""
-    if lower:
-        alphabet = alphabet + string.ascii_lowercase
-    if upper:
-        alphabet = alphabet + string.ascii_uppercase
-    if digit:
-        alphabet = alphabet + string.digits
-
-    while True:
-        password = "".join(secrets.choice(alphabet) for i in range(length))
-        if (
-            (any(c.islower() for c in password) or not lower)
-            and (any(c.isupper() for c in password) or not upper)
-            and (any(c.isdigit() for c in password) or not digit)
-        ):
             return password
 
 
