@@ -40,10 +40,12 @@ def genpw(length=16, upper=True, lower=True, digit=True):
 def cli(length, upper, lower, digit):
     """Generate a random password."""
     if not lower and not upper and not digit:
-        raise click.ClickException("excluded all character types")
+        raise click.UsageError(
+            "Impossible combination of '--no-upper', '--no-lower', and '--no-digit'."
+        )
 
     minimum_length = int(lower) + int(upper) + int(digit)
     if length < minimum_length:
-        raise click.ClickException("minimum length is {}".format(minimum_length))
+        raise click.BadParameter("minimum length is {}".format(minimum_length))
 
     click.echo(genpw(length, upper, lower, digit))
