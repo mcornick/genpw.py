@@ -2,3 +2,4 @@
 .envrc
 __pycache__
 genpw.egg-info
+venv
