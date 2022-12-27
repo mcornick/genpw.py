@@ -6,7 +6,7 @@ extension of the examples provided in its
 
 Requires the [click](https://palletsprojects.com/p/click/) module.
 Expects to be installed with `pip`, such as
-`pip install git+https://github.com/mcornick/genpw.py.git`
+`pip install git+https://git.sr.ht/~mcornick/genpw.py`
 
 Use the --length option to specify the length. If no length is passed, a
 default length of 16 is used.
